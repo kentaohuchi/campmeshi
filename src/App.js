@@ -1,15 +1,13 @@
-import './App.css';
-
 import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 
-export default function BasicButtons() {
+export default function ImageAvatars() {
   return (
-    <Stack spacing={2} direction="row">
-      <Button variant="text">実行</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
+    <Stack direction="row" spacing={2}>
+      <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+      <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+      <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
     </Stack>
   );
 }
