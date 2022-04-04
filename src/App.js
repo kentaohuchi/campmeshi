@@ -7,10 +7,35 @@ import FoodBankIcon from '@mui/icons-material/FoodBank';
 import FiberNewIcon from '@mui/icons-material/FiberNew';
 import ImageSearchIcon from '@mui/icons-material/ImageSearch';
 import PersonIcon from '@mui/icons-material/Person';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import FoodSerch from './FoodSerch';
+
 
 function App() {
   return (
-    <div>
+    <Router>
+            <div>
+                <nav>
+                            <Link to="/Home"></Link>
+                        </nav>
+
+                <Routes>
+                    <Route exect path="/Home" element={<Home/>}  />
+                    <Route exect path="/Food/Serch" element={<Food/>}  />
+                </Routes>
+            </div>
+        </Router>
+  );
+}
+
+function Home() {
+  return (
+    <div className="App">
       <Header/>
       <Main/>
       <Footer/>
@@ -29,12 +54,12 @@ function Header() {
         title5={'料理検索'}
         title6={'キャンプ場検索'}
         title7={'退会'}
+        homename={'CamP MeshI'}
         />
-        <h1>CamP MeshI</h1>
+
         <Button
         Buttonname={<AddCircleOutlineIcon/>}
-        />
-      
+        />          
     </div>
   );
 }
@@ -58,13 +83,24 @@ function Footer(){
       <Menubar
       newfoods={"最新料理投稿"}
       news={<FiberNewIcon/>}
-      label={"キャンプ飯検索"}
+      url1={"/Food/Serch"}
+      cook={"キャンプ飯検索"}
       cooking={<FoodBankIcon/>}
       campserch={'キャンプ場検索'}
       mountain={<ImageSearchIcon/>}
       mypage={'マイページ'}
       person={<PersonIcon/>}
       />
+      </div>
+    </footer>
+  );
+}
+
+function Food(){
+  return(
+    <footer>
+      <div>
+      <FoodSerch/>
       </div>
     </footer>
   );

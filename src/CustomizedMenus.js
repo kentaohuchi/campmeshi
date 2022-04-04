@@ -42,6 +42,7 @@ export default function BasicMenu(props) {
         <MenuItem onClick={handleClose}>{props.title6}</MenuItem>
         <MenuItem onClick={handleClose}>{props.title7}</MenuItem>
       </Menu>
+      <h1>{props.homename}</h1>
     </div>
   );
 }

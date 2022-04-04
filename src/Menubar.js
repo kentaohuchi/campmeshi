@@ -5,6 +5,10 @@ import FolderIcon from '@mui/icons-material/Folder';
 import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
 
 export default function LabelBottomNavigation(props) {
   const [value, setValue] = React.useState('recents');
@@ -21,9 +25,12 @@ export default function LabelBottomNavigation(props) {
         icon={props.news}
       />
       <BottomNavigationAction
-        label={props.label}
-        value="recents"
-        icon={props.cooking}
+      component={Link}
+      to={props.url1}
+      label={props.cook}
+      value="recents"
+      icon={props.cooking}
+        
       />
       <BottomNavigationAction
         label={props.campserch}
