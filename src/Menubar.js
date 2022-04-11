@@ -18,7 +18,7 @@ export default function LabelBottomNavigation(props) {
   };
 
   return (
-    <BottomNavigation sx={{ width: 500 }} value={value} onChange={handleChange}>
+    <BottomNavigation sx={{ width: 500}} value={value} onChange={handleChange}>
       <BottomNavigationAction
         label={props.newfoods}
         value="recents"

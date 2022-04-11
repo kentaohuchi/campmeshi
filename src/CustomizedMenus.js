@@ -15,7 +15,7 @@ export default function BasicMenu(props) {
   };
 
   return (
-    <div>
+    <div style={{justifyContent:'center', display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%'}}>
       <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}

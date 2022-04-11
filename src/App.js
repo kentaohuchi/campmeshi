@@ -35,7 +35,7 @@ function App() {
 
 function Home() {
   return (
-    <div className="App">
+    <div className="App" style={{justifyContent:'center'}}>
       <Header/>
       <Main/>
       <Footer/>
@@ -45,7 +45,7 @@ function Home() {
 
 function Header() {
   return (
-    <div className="App">
+    <div style={{display: 'flex',justifyContent:'center'}}>
         <CustomizedMenus
         title1={'会員登録'}
         title2={'マイページ'}
@@ -67,7 +67,7 @@ function Header() {
 function Main(){
   return(
     <main>
-      <div>
+      <div style={{justifyContent:'center'}}>
         <h1>====</h1>
         <p>フォロワーの投稿内容</p>
         <h1>====</h1>
@@ -79,7 +79,7 @@ function Main(){
 function Footer(){
   return(
     <footer>
-      <div>
+      <div style={{display: 'flex',justifyContent:'center'}}>
       <Menubar
       newfoods={"最新料理投稿"}
       news={<FiberNewIcon/>}
