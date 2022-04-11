@@ -3,100 +3,125 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
+import otsumami from './static/images/otsumami.jpeg'
+import gohan from './static/images/gohan.jpeg'
+import menrui from './static/images/menrui.jpeg'
+import panrui from './static/images/panrui.jpeg'
+import chousyoku from './static/images/chousyoku.jpeg'
+import niku from './static/images/niku.jpeg'
+import gyokai from './static/images/gyokai.jpeg'
+import yasai from './static/images/yasai.jpeg'
+import salada from './static/images/salada.jpeg'
+import agemono from './static/images/agemono.jpeg'
+import nabe from './static/images/nabe.jpeg'
+import soupe from './static/images/soupe.jpeg'
+import konamono from './static/images/konamono.png'
+import egg from './static/images/egg.png'
+import wasyoku from './static/images/wasyoku.jpeg'
+import korean from './static/images/korean.jpeg'
+import china from './static/images/china.jpeg'
+import yousyoku from './static/images/yousyoku.jpeg'
+import italy from './static/images/italy.jpeg'
+import desart from './static/images/desart.jpeg'
 
 const images = [
   {
-    url: '/static/images/buttons/breakfast.jpg',
+    url:otsumami,
     title: 'おつまみ',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
+    url:gohan,
     title: 'ご飯もの',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url:menrui,
     title: '麺類',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/breakfast.jpg',
+    url:panrui,
     title: 'パン類',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
+    url:chousyoku,
     title: '朝食',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url:niku,
     title: '肉料理',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
+    url:gyokai,
     title: '魚介料理',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url:yasai,
     title: '野菜料理',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/breakfast.jpg',
+    url:salada,
     title: 'サラダ',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
+    url:agemono,
     title: '揚げ物',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url:nabe,
     title: '鍋もの',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/breakfast.jpg',
+    url:soupe,
     title: '汁物/スープ',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
+    url:konamono,
     title: '粉物',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url:egg,
     title: '卵料理',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
+    url:wasyoku,
     title: '和食',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url:korean,
     title: '韓国料理',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url:china,
     title: '中華料理',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url:yousyoku,
     title: '洋食',
     width: '25%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url:italy,
+    title: 'イタリア料理',
+    width: '25%',
+  },
+  {
+    url:desart,
     title: 'デザート',
     width: '25%',
   },

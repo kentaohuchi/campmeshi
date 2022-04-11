@@ -14,7 +14,7 @@ import {
   Link
 } from "react-router-dom";
 import FoodSerch from './FoodSerch';
-
+import Singup from './Signup';
 
 function App() {
   return (
@@ -26,7 +26,8 @@ function App() {
 
                 <Routes>
                     <Route exect path="/Home" element={<Home/>}  />
-                    <Route exect path="/Food/Serch" element={<Food/>}  />
+                    <Route exect path="/Singup" element={<Singup/>}  />
+                    <Route exect path="/Food/Serch" element={<FoodSerch/>}  />
                 </Routes>
             </div>
         </Router>
@@ -96,15 +97,9 @@ function Footer(){
   );
 }
 
-function Food(){
-  return(
-    <footer>
-      <div>
-      <FoodSerch/>
-      </div>
-    </footer>
-  );
-}
+
+
+
 
 export default App;
 
