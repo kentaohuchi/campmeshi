@@ -15,6 +15,8 @@ import {
 } from "react-router-dom";
 import FoodSerch from './FoodSerch';
 import Singup from './Signup';
+import Post from './Post';
+
 
 function App() {
   return (
@@ -25,9 +27,11 @@ function App() {
                         </nav>
 
                 <Routes>
-                    <Route exect path="/Home" element={<Home/>}  />
-                    <Route exect path="/Singup" element={<Singup/>}  />
-                    <Route exect path="/Food/Serch" element={<FoodSerch/>}  />
+                  <Route exect path="/Post" element={<Post/>}  />
+                  <Route exect path="/Home" element={<Home/>}  />
+                  <Route exect path="/Home" element={<Home/>}  />
+                  <Route exect path="/Singup" element={<Singup/>}  />
+                  <Route exect path="/Food/Serch" element={<FoodSerch/>}  />
                 </Routes>
             </div>
         </Router>
@@ -60,6 +64,7 @@ function Header() {
 
         <Button
         Buttonname={<AddCircleOutlineIcon/>}
+        to={"/Post"}
         />          
     </div>
   );
