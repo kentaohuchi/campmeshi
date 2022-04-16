@@ -3,8 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -13,7 +11,10 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import RadioButtonsGroup from "./RadioButtonsGroup";
 import app from "./firebase"
+import ChoicePrefecture from './ChoicePrefecture'
+import Birthday from './Birthday';
 
 function Copyright(props) {
   return (
@@ -71,7 +72,7 @@ const singup=(email, password)=>{
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            会員登録
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
@@ -82,7 +83,7 @@ const singup=(email, password)=>{
                   required
                   fullWidth
                   id="firstName"
-                  label="First Name"
+                  label="姓"
                   autoFocus
                 />
               </Grid>
@@ -91,9 +92,19 @@ const singup=(email, password)=>{
                   required
                   fullWidth
                   id="lastName"
-                  label="Last Name"
+                  label="名"
                   name="lastName"
                   autoComplete="family-name"
+                />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="userName"
+                  label="ユーザーネーム"
+                  name="userName"
+                  autoComplete="userName"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -101,7 +112,7 @@ const singup=(email, password)=>{
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="メールアドレス"
                   name="email"
                   autoComplete="email"
                 />
@@ -110,19 +121,35 @@ const singup=(email, password)=>{
                 <TextField
                   required
                   fullWidth
+                  id="loginid"
+                  label="ログインID"
+                  name="loginid"
+                  autoComplete="loginid"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
                   name="password"
-                  label="Password"
+                  label="パスワード"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                />
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label="パスワード（確認用）"
                   type="password"
                   id="password"
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
+              <RadioButtonsGroup/>
+              <ChoicePrefecture/>
+              <Birthday/>
             </Grid>
             <Button
               type="submit"
@@ -130,12 +157,13 @@ const singup=(email, password)=>{
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              登録
+
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="#" variant="body2">
-                  Already have an account? Sign in
+                  すでにアカウントをお持ちの方はこちらからサインインしてください。
                 </Link>
               </Grid>
             </Grid>
