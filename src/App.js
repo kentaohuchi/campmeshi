@@ -1,9 +1,9 @@
 import * as React from 'react';
 import CustomizedMenus from "./CustomizedMenus";
 import Button from "./Button";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Menubar from "./Menubar";
 import FoodBankIcon from '@mui/icons-material/FoodBank';
+import PostAddIcon from '@mui/icons-material/PostAdd';
 import FiberNewIcon from '@mui/icons-material/FiberNew';
 import ImageSearchIcon from '@mui/icons-material/ImageSearch';
 import PersonIcon from '@mui/icons-material/Person';
@@ -16,6 +16,7 @@ import {
 import FoodSerch from './FoodSerch';
 import Singup from './Signup';
 import Post from './Post';
+import TitleLogo from './TitleLogo';
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
 
 function Home() {
   return (
-    <div className="App" style={{justifyContent:'center'}}>
+    <div style={{justifyContent:'center'}}>
       <Header/>
       <Main/>
       <Footer/>
@@ -50,7 +51,7 @@ function Home() {
 
 function Header() {
   return (
-    <div style={{display: 'flex',justifyContent:'center'}}>
+    <div style={{display: 'flex'}}>
         <CustomizedMenus
         title1={'会員登録'}
         title2={'マイページ'}
@@ -61,10 +62,9 @@ function Header() {
         title7={'退会'}
         homename={'CamP MeshI'}
         />
-
+        <TitleLogo/>
         <Button
-        Buttonname={<AddCircleOutlineIcon/>}
-        to={"/Post"}
+        Buttonname={<PostAddIcon/>}
         />          
     </div>
   );

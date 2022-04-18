@@ -6,21 +6,31 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 export default function SelectOtherProps() {
-  const [age, setAge] = React.useState('');
+  const [day, setday] = React.useState('');
+  const [month, setmonth] = React.useState('');
+  const [year, setyear] = React.useState('');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setyear(event.target.value);
+  };
+
+  const Change = (event) => {
+    setmonth(event.target.value);
+  };
+
+  const handle = (event) => {
+    setday(event.target.value);
   };
 
   return (
     <div>
       <FormControl sx={{ m: 1, minWidth: 120 }} error>
-        <InputLabel id="demo-simple-select-error-label">西暦</InputLabel>
+        <InputLabel id="demo-simple-select-Year-label">西暦</InputLabel>
         <Select
-          labelId="demo-simple-select-error-label"
-          id="demo-simple-select-error"
-          value={age}
-          label="Age"
+          labelId="demo-simple-select-Year-label"
+          id="demo-simple-select-Year"
+          value={year}
+          label="Year"
           onChange={handleChange}
           renderValue={(value) => ` ${value}`}
         >
@@ -132,13 +142,13 @@ export default function SelectOtherProps() {
         <FormHelperText>年</FormHelperText>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 120 }} error>
-        <InputLabel id="demo-simple-select-error-label">月</InputLabel>
+        <InputLabel id="demo-simple-select-Month-label">月</InputLabel>
         <Select
-          labelId="demo-simple-select-error-label"
-          id="demo-simple-select-error"
-          value={age}
-          label="Age"
-          onChange={handleChange}
+          labelId="demo-simple-select-Month-label"
+          id="demo-simple-select-Month"
+          value={month}
+          label="Month"
+          onChange={Change}
           renderValue={(value) => ` ${value}`}
         >
           <MenuItem value="">
@@ -160,13 +170,13 @@ export default function SelectOtherProps() {
         <FormHelperText>月</FormHelperText>
       </FormControl>
       <FormControl required sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-required-label">日</InputLabel>
+        <InputLabel id="demo-simple-select-Day-label">日</InputLabel>
         <Select
-          labelId="demo-simple-select-required-label"
-          id="demo-simple-select-required"
-          value={age}
-          label="Age *"
-          onChange={handleChange}
+          labelId="demo-simple-select-Day-label"
+          id="demo-simple-select-Day"
+          value={day}
+          label="Day *"
+          onChange={handle}
         >
           <MenuItem value="">
             <em>日</em>

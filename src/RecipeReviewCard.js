@@ -11,6 +11,11 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MultilineTextFields from './MultilineTextFields';
 import Button from "./Button";
 import SendIcon from '@mui/icons-material/Send';
+import { valueToPercent } from '@mui/base';
+import { doc, setDoc, getFirestore, getDoc } from "firebase/firestore";
+import app from './firebase';
+
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -24,11 +29,36 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function RecipeReviewCard() {
-  const [expanded, setExpanded] = React.useState(false);
+  const [post, setPost] = React.useState({});
+  const sample={
+    '何人前':2,
+    '材料':'白米',
+    '作り方':'握る'
+  }
+  const db = getFirestore(app);
+  const creatPost  = async () => {
+    console.log('完了');
+    await setDoc(doc(db, "posts","test"), {
+      '何人前':2,
+      '材料':'白米',
+      '作り方':'握る'
+    });
+  }
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+// async function test(){
+//   const docRef = doc(db, "posts", "gbnZB4Joraukm2Szs8Iz");
+//   const docSnap = await getDoc(docRef);
+  
+//   if (docSnap.exists()) {
+//     console.log("Document data:", docSnap.data());
+//   } else {
+//     // doc.data() will be undefined in this case
+//     console.log("No such document!");
+//   }  
+
+// }
+
+  
 
   return (
     <Card sx={{ width: '100%',height:'100%', }}>
@@ -61,7 +91,8 @@ export default function RecipeReviewCard() {
       </IconButton>
       <Button
       style={{ float: 'right'}}
-      Buttonname={<SendIcon/>}
+      Buttonname={<SendIcon
+        onClick={creatPost}/>}
       />
 
     </Card>

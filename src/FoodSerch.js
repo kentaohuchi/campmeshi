@@ -8,6 +8,7 @@ import FoodBankIcon from '@mui/icons-material/FoodBank';
 import FiberNewIcon from '@mui/icons-material/FiberNew';
 import ImageSearchIcon from '@mui/icons-material/ImageSearch';
 import PersonIcon from '@mui/icons-material/Person';
+import TitleLogo from './TitleLogo';
 
 function FoodSerch() {
     return (
@@ -32,6 +33,7 @@ function FoodSerch() {
           title7={'退会'}
           homename={'CamP MeshI'}
           /> 
+          <TitleLogo/>
           <Textfield
           text1={<SearchIcon/>}
           />     
