@@ -20,13 +20,15 @@ export default function LabelBottomNavigation(props) {
   return (
     <BottomNavigation sx={{ width: 500}} value={value} onChange={handleChange}>
       <BottomNavigationAction
+        component={Link}
+        to="/Post/Display"
         label={props.newfoods}
         value="recents"
         icon={props.news}
       />
       <BottomNavigationAction
       component={Link}
-      to={props.url1}
+      to="/Food/Serch"
       label={props.cook}
       value="recents"
       icon={props.cooking}

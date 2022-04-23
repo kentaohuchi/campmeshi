@@ -17,6 +17,7 @@ import FoodSerch from './FoodSerch';
 import Singup from './Signup';
 import Post from './Post';
 import TitleLogo from './TitleLogo';
+import PostDisplay from './PostDisplay'
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                         </nav>
 
                 <Routes>
+                  <Route exect path="/Post/Display" element={<PostDisplay/>}  />
                   <Route exect path="/Post" element={<Post/>}  />
                   <Route exect path="/Home" element={<Home/>}  />
                   <Route exect path="/Home" element={<Home/>}  />
@@ -89,7 +91,6 @@ function Footer(){
       <Menubar
       newfoods={"最新料理投稿"}
       news={<FiberNewIcon/>}
-      url1={"/Food/Serch"}
       cook={"キャンプ飯検索"}
       cooking={<FoodBankIcon/>}
       campserch={'キャンプ場検索'}

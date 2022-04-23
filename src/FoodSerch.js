@@ -55,6 +55,7 @@ function FoodSerch() {
         <div style={{display: 'flex',justifyContent:'center'}}>
         <Menubar
         newfoods={"最新料理投稿"}
+        url={"/Post/Display"}
         news={<FiberNewIcon/>}
         url1={"/Food/Serch"}
         cook={"キャンプ飯検索"}
