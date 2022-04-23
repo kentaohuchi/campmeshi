@@ -78,9 +78,10 @@ export default function RecipeReviewCard() {
       />
       
       <MultilineTextFields
-      multi={'何人前?'}
-      multi1={'材料'}
-      multi2={'作り方'}
+      multi={'料理名'}
+      multi1={'何人前?'}
+      multi2={'材料'}
+      multi3={'作り方'}
       />
       
       <IconButton aria-label="add to favorites">

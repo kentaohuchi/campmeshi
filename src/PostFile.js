@@ -1,99 +1,97 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Skeleton from '@mui/material/Skeleton';
+import Typography from '@mui/material/Typography';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import FoodGenreButton from './FoodGenreButton'
 
-function Media(props) {
-  const { loading = false } = props;
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
+
+export default function RecipeReviewCard() {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
   return (
-    <Card sx={{ maxWidth: '50%', m: 2, maxHeight:'50%' ,justifyContent:'center', alignItems:'center'}}>
+    <Card style={{justifyContent:'center' ,alignItems:'center'}}>
       <CardHeader
-      justifyContent='center' alignItems='center'
         avatar={
-          loading ? (
-            <Skeleton animation="wave" variant="circular" width={40} height={40} justifyContent='center' alignItems='center' />
-          ) : (
-            <Avatar
-              alt="Ted talk"
-              src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg"
-              justifyContent='center' alignItems='center'
-            />
-          )
+          <Avatar style={{justifyContent:'center' ,alignItems:'center'}}>
+            R
+          </Avatar>
         }
         action={
-          loading ? null : (
-            <IconButton aria-label="settings" justifyContent='center' alignItems='center'>
-              <MoreVertIcon justifyContent='center' alignItems='center' />
-            </IconButton>
-          )
+            <FoodGenreButton/>
         }
-        title={
-          loading ? (
-            <Skeleton
-              animation="wave"
-              height={10}
-              width="80%"
-              style={{ marginBottom: 6 ,justifyContent:'center' ,alignItems:'center'}}
-            />
-          ) : (
-            'Ted'
-          )
-        }
-        subheader={
-          loading ? (
-            <Skeleton animation="wave" height={10} width="40%" justifyContent='center' alignItems='center' />
-          ) : (
-            '5 hours ago'
-          )
-        }
+        title="Shrimp and Chorizo Paella"
+        subheader="September 14, 2016"
       />
-      {loading ? (
-        <Skeleton sx={{ height: 190 }} animation="wave" variant="rectangular" justifyContent='center' alignItems='center'/>
-      ) : (
-        <CardMedia
-          component="img"
-          height="140"
-          image="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512"
-          alt="Nicola Sturgeon on a TED talk stage"
-          justifyContent='center' alignItems='center'
-        />
-      )}
-
-      <CardContent justifyContent='center' alignItems='center'>
-        {loading ? (
-          <React.Fragment>
-            <Skeleton animation="wave" height={10} style={{ marginBottom: 6 , justifyContent:'center' , alignItems:'center'}} />
-            <Skeleton animation="wave" height={10} width="80%" justifyContent='center' alignItems='center' />
-          </React.Fragment>
-        ) : (
-          <Typography variant="body2" color="text.secondary" component="p" justifyContent='center' alignItems='center'>
-            {
-              "Why First Minister of Scotland Nicola Sturgeon thinks GDP is the wrong measure of a country's success:"
-            }
-          </Typography>
-        )}
+      <CardMedia
+        component="img"
+        height="194"
+        image="/static/images/cards/paella.jpg"
+        alt="Paella dish"
+        style={{justifyContent:'center' ,alignItems:'center'}}
+      />
+      <CardContent>
+        <Typography style={{justifyContent:'center' ,alignItems:'center'}} variant="body2" color="text.secondary">
+          
+        </Typography>
       </CardContent>
+      <CardActions disableSpacing style={{justifyContent:'center' ,alignItems:'center'}}>  
+        <IconButton aria-label="add to favorites" style={{justifyContent:'center' ,alignItems:'center'}}>
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share" style={{justifyContent:'center' ,alignItems:'center'}}> 
+          <ShareIcon />
+        </IconButton>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+          style={{justifyContent:'center' ,alignItems:'center'}}
+        >
+          <ExpandMoreIcon style={{justifyContent:'center' ,alignItems:'center'}} />
+        </ExpandMore>
+      </CardActions>
+      <Collapse style={{justifyContent:'center' ,alignItems:'center'}} in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph style={{justifyContent:'center' ,alignItems:'center'}}>Method:</Typography>
+          <Typography paragraph style={{justifyContent:'center' ,alignItems:'center'}}>
+           
+          </Typography>
+          <Typography paragraph style={{justifyContent:'center' ,alignItems:'center'}}>
+            
+          </Typography>
+          <Typography paragraph style={{justifyContent:'center' ,alignItems:'center'}}>
+            
+          </Typography>
+          <Typography style={{justifyContent:'center' ,alignItems:'center'}}>
+
+          </Typography>
+        </CardContent>
+      </Collapse>
     </Card>
-  );
-}
-
-Media.propTypes = {
-  loading: PropTypes.bool,
-};
-
-export default function Facebook() {
-  return (
-    <div style={{justifyContent:'center',alignItems:'center' }}>
-      <Media loading />
-      <Media />
-    </div>
   );
 }

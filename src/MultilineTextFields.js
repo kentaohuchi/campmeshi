@@ -32,8 +32,14 @@ export default function MultilineTextFields(props) {
           multiline
         />
         <TextField
-          id="outlined-multiline-static"
+          id="outlined-textarea"
           label={props.multi2}
+          placeholder="Placeholder"
+          multiline
+        />
+        <TextField
+          id="outlined-multiline-static"
+          label={props.multi3}
           multiline
           rows={4}
         />
