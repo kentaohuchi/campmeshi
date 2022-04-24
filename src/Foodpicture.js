@@ -23,12 +23,19 @@ import china from './static/images/china.jpeg'
 import yousyoku from './static/images/yousyoku.jpeg'
 import italy from './static/images/italy.jpeg'
 import desart from './static/images/desart.jpeg'
+import PostOtsumami from './PostOtsumami';
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
 
 const images = [
   {
     url:otsumami,
     title: 'おつまみ',
     width: '25%',
+    component:Link,
+    to:'/PostOtsumami'
   },
   {
     url:gohan,

@@ -9,6 +9,11 @@ import * as React from 'react';
   import FoodBankIcon from '@mui/icons-material/FoodBank';
   import ImageSearchIcon from '@mui/icons-material/ImageSearch';
   import PersonIcon from '@mui/icons-material/Person';
+  import Foodpicture from './Foodpicture';
+  import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
 
   function PostDisplay() {
     return (
