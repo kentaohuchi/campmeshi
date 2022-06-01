@@ -14,7 +14,7 @@ import {
   Link
 } from "react-router-dom";
 import FoodSerch from './FoodSerch';
-import Singup from './Signup';
+import Signup from './Signup';
 import Post from './Post';
 import TitleLogo from './TitleLogo';
 import PostDisplay from './PostDisplay'
@@ -38,7 +38,12 @@ import PostChina from './PostChina';
 import PostYousyoku from './PostYousyoku';
 import PostItaly from './PostItaly';
 import Postdesirt from './Postdesirt';
-import Foodpicture from './Foodpicture';
+import PostFile from './PostFile';
+import SignIn from './SignIn';
+import MyPage  from './MyPage';
+import CampDailyPostDisplay  from './CampDailyPostDisplay';
+import CampSerch from './CampSerch';
+import CampList from './CampList';
 
 
 function App() {
@@ -54,7 +59,7 @@ function App() {
                   <Route exect path="/Post" element={<Post/>}/>
                   <Route exect path="/Home" element={<Home/>}/>
                   <Route exect path="/Home" element={<Home/>}/>
-                  <Route exect path="/Singup" element={<Singup/>}/>
+                  <Route exect path="/SignUp" element={<Signup/>}/>
                   <Route exect path="/Food/Serch" element={<FoodSerch/>}/>
                   <Route exect path="/PostOtsumami" element={<PostOtsumami/>}/>
                   <Route exect path="/PostGohan" element={<PostGohan/>}/>
@@ -76,6 +81,11 @@ function App() {
                   <Route exect path="/PostYousyoku" element={<PostYousyoku/>}/>
                   <Route exect path="/PostItaly" element={<PostItaly/>}/>
                   <Route exect path="/Postdesirt" element={<Postdesirt/>}/>
+                  <Route exect path="/SignIn" element={<SignIn/>}/>
+                  <Route exect path="/MyPage" element={<MyPage/>}/>
+                  <Route exect path="/MyPage/CampDailyPostDisplay" element={<CampDailyPostDisplay/>}/>
+                  <Route exect path="/CampSerch" element={<CampSerch/>}/>
+                  <Route exect path="/CampHokkaidou" element={<CampList/>}/>
                 </Routes>
             </div>
         </Router>
@@ -117,9 +127,7 @@ function Main(){
   return(
     <main>
       <div style={{justifyContent:'center'}}>
-        <h1>====</h1>
-        <p>フォロワーの投稿内容</p>
-        <h1>====</h1>
+        <PostFile/>
       </div>
     </main>
   )
@@ -128,7 +136,7 @@ function Main(){
 function Footer(){
   return(
     <footer>
-      <div style={{display: 'flex',position:'fixed',bottom:0,justifyContent:'center',marginLeft:'20%',marginRight:'20%'}}>
+      <div style={{position:'fixed',left:'50%', bottom:0,transform:'translate(-50%, -50%)'}}>
       <Menubar
       newfoods={"最新料理投稿"}
       news={<FiberNewIcon/>}
@@ -143,10 +151,6 @@ function Footer(){
     </footer>
   );
 }
-
-
-
-
 
 export default App;
 

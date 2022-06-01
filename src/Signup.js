@@ -10,11 +10,12 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import RadioButtonsGroup from "./RadioButtonsGroup";
 import app from "./firebase"
 import ChoicePrefecture from './ChoicePrefecture'
 import Birthday from './Birthday';
+
 
 function Copyright(props) {
   return (
@@ -43,10 +44,15 @@ export default function SignUp() {
   };
 
 const auth = getAuth(app);
+
 const singup=(email, password)=>{
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in
+    updateProfile(auth.currentUser, {
+      displayName:'value' , photoURL:'URL' 
+    }).then(() => {
+    }).catch((error) => {
+    });
     const user = userCredential.user;
     // ...
   })
@@ -162,7 +168,7 @@ const singup=(email, password)=>{
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/SignIn" variant="body2">
                   すでにアカウントをお持ちの方はこちらからサインインしてください。
                 </Link>
               </Grid>

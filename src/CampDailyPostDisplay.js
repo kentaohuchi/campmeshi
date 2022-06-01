@@ -8,10 +8,9 @@ import { red } from '@mui/material/colors';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import PanoramaIcon from '@mui/icons-material/Panorama';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import MultilineTextFields from './MultilineTextFields';
+import CampMultilineTextFields from './CampMultilineTextFields';
 import Button from "./Button";
 import SendIcon from '@mui/icons-material/Send';
-import { valueToPercent } from '@mui/base';
 import { doc, setDoc, getFirestore, getDoc } from "firebase/firestore";
 import app from './firebase';
 import Input from '@mui/material/Input';
@@ -116,15 +115,10 @@ function handleChange(event) {
         subheader="September 14, 2016"
       />
       
-      <MultilineTextFields
-      setFoodName = {setFoodName}
-      setAmount={setAmount}
-      setMaterial={setMaterial}
-      setMake={setMake}
-      multi={'料理名'}
-      multi1={'何人前?'}
-      multi2={'材料'}
-      multi3={'作り方'}
+      <CampMultilineTextFields
+      multi={'日付'}
+      multi1={'キャンプ場名'}
+      multi2={'本文'}
       />
       
       

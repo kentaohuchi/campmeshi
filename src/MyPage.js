@@ -1,25 +1,28 @@
 import * as React from 'react';
-  import PostFile from './PostFile'
-  import CustomizedMenus from "./CustomizedMenus";
-  import TitleLogo from './TitleLogo';
-  import Button from "./Button";
-  import PostAddIcon from '@mui/icons-material/PostAdd';
-  import Menubar from "./Menubar";
-  import FiberNewIcon from '@mui/icons-material/FiberNew';
-  import FoodBankIcon from '@mui/icons-material/FoodBank';
-  import ImageSearchIcon from '@mui/icons-material/ImageSearch';
-  import PersonIcon from '@mui/icons-material/Person';
+import CustomizedMenus from "./CustomizedMenus";
+import Button from "./Button";
+import TitleLogo from './TitleLogo';
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import MyPageTab from './MyPageTab';
+import Menubar from "./Menubar";
+import FiberNewIcon from '@mui/icons-material/FiberNew';
+import ImageSearchIcon from '@mui/icons-material/ImageSearch';
+import FoodBankIcon from '@mui/icons-material/FoodBank';
+import PersonIcon from '@mui/icons-material/Person';
+import MyPageIcon from './MyPageIcon';
+import Typography from '@mui/material/Typography';
+import MyPageButton from './MyPageButton';
 
-  function PostDisplay() {
+function MyPage() {
     return (
-      <div style={{justifyContent:'center' ,alignItems:'center'}}>
+      <div>
         <Header/>
-        <PostFile/>
+        <Main/>
         <Footer/>
       </div>
     );
   }
-
+  
   function Header() {
     return (
       <div style={{display: 'flex'}}>
@@ -41,6 +44,21 @@ import * as React from 'react';
     );
   }
 
+  function Main(){
+    return(
+      <main>
+        <div style={{display: 'flex'}}>
+        <MyPageIcon/>
+        <MyPageButton/>
+        </div>
+        <Typography>
+          紹介文
+        </Typography>
+        <MyPageTab/>
+      </main>
+    )
+  }
+
   function Footer(){
     return(
       <footer>
@@ -59,5 +77,5 @@ import * as React from 'react';
       </footer>
     );
   }
-
-  export default PostDisplay;
+  
+  export default MyPage;

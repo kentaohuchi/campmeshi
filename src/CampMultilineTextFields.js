@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import CampEvaluation from './CampEvaluation';
 
 export default function MultilineTextFields(props) {
   const [value, setValue] = React.useState('Controlled');
@@ -43,27 +44,20 @@ export default function MultilineTextFields(props) {
         />
         <TextField
           id={props.multi2}
-          label={props.multi2}
           placeholder={props.multi2}
+          label={props.multi2}
           onChange={event => {
             const { value } = event.target;
-            const { Material } =props.multi2;
-            props.setMaterial({Material:value})
-            }}
-          multiline
-        />
-        <TextField
-          id={props.multi3}
-          placeholder={props.multi3}
-          label={props.multi3}
-          onChange={event => {
-            const { value } = event.target;
-            const { Make } =props.multi3;
+            const { Make } =props.multi2;
             props.setMake({Make:value})
             }}
           multiline
           rows={4}
         />
+        <div style={{display:'flex'}}>
+        <h4>評価</h4>
+        <CampEvaluation/>
+        </div>
       </div>
       
     </Box>

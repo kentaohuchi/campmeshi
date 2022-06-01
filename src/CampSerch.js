@@ -1,20 +1,21 @@
 import * as React from 'react';
-  import PostFile from './PostFile'
-  import CustomizedMenus from "./CustomizedMenus";
-  import TitleLogo from './TitleLogo';
-  import Button from "./Button";
-  import PostAddIcon from '@mui/icons-material/PostAdd';
-  import Menubar from "./Menubar";
-  import FiberNewIcon from '@mui/icons-material/FiberNew';
-  import FoodBankIcon from '@mui/icons-material/FoodBank';
-  import ImageSearchIcon from '@mui/icons-material/ImageSearch';
-  import PersonIcon from '@mui/icons-material/Person';
+import CustomizedMenus from "./CustomizedMenus";
+import Textfield from "./Textfield"
+import SearchIcon from '@mui/icons-material/Search';
+import Menubar from "./Menubar";
+import FoodBankIcon from '@mui/icons-material/FoodBank';
+import FiberNewIcon from '@mui/icons-material/FiberNew';
+import ImageSearchIcon from '@mui/icons-material/ImageSearch';
+import PersonIcon from '@mui/icons-material/Person';
+import TitleLogo from './TitleLogo';
+import CampSerchMain from './CampSerchMain';
 
-  function PostDisplay() {
+function CampSerch() {
     return (
-      <div style={{justifyContent:'center' ,alignItems:'center'}}>
+      <div style={{justifyContent:'center' }}>
         <Header/>
-        <PostFile/>
+        <h1>キャンプ場検索</h1>
+        <CampSerchMain/>
         <Footer/>
       </div>
     );
@@ -32,11 +33,11 @@ import * as React from 'react';
           title6={'キャンプ場検索'}
           title7={'退会'}
           homename={'CamP MeshI'}
-          />
+          /> 
           <TitleLogo/>
-          <Button
-          Buttonname={<PostAddIcon/>}
-          />          
+          <Textfield
+          text1={<SearchIcon/>}
+          />     
       </div>
     );
   }
@@ -44,10 +45,12 @@ import * as React from 'react';
   function Footer(){
     return(
       <footer>
-        <div style={{position:'fixed',left:'50%', bottom:0,transform:'translate(-50%, -50%)'}}>
+        <div style={{display: 'flex',justifyContent:'center'}}>
         <Menubar
         newfoods={"最新料理投稿"}
+        url={"/Post/Display"}
         news={<FiberNewIcon/>}
+        url1={"/Food/Serch"}
         cook={"キャンプ飯検索"}
         cooking={<FoodBankIcon/>}
         campserch={'キャンプ場検索'}
@@ -60,4 +63,4 @@ import * as React from 'react';
     );
   }
 
-  export default PostDisplay;
+  export default CampSerch;

@@ -29,26 +29,51 @@ export default function BasicMenu(props) {
       >
         <MenuIcon/>
       </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
+       <Menu
+         id="basic-menu"
+         anchorEl={anchorEl}
+         open={open}
+         onClose={handleClose}
+         MenuListProps={{
+           'aria-labelledby': 'basic-button',
+         }}
+       >
+        
         <MenuItem 
         onClick={handleClose}
         component={Link}
-        to={'/Singup'}>
+        to={'/SignUp'}>
           {props.title1}
         </MenuItem>
-        <MenuItem onClick={handleClose}>{props.title2}</MenuItem>
-        <MenuItem onClick={handleClose}>{props.title3}</MenuItem>
-        <MenuItem onClick={handleClose}>{props.title4}</MenuItem>
-        <MenuItem onClick={handleClose}>{props.title5}</MenuItem>
-        <MenuItem onClick={handleClose}>{props.title6}</MenuItem>
+        
+        <MenuItem onClick={handleClose}
+        component={Link}
+        to={'/MyPage'}>
+          {props.title2}
+        </MenuItem>
+        
+        <MenuItem 
+        onClick={handleClose}
+        component={Link}
+        to={'/SignIn'}>
+          {props.title3}
+          </MenuItem>
+        
+        <MenuItem onClick={handleClose}
+        component={Link}
+        to={"/Post/Display"}
+        >{props.title4}</MenuItem>
+        
+        <MenuItem onClick={handleClose}
+        component={Link}
+        to={"/Food/Serch"}
+        >{props.title5}</MenuItem>
+       
+        <MenuItem onClick={handleClose}
+       component={Link}
+       to={"/CampSerch"}
+       >{props.title6}</MenuItem>
+       
         <MenuItem onClick={handleClose} >{props.title7}</MenuItem>
       </Menu>
     </div>

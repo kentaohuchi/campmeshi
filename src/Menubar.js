@@ -1,10 +1,6 @@
 import * as React from 'react';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import FolderIcon from '@mui/icons-material/Folder';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import {
   BrowserRouter as Router,
   Link
@@ -35,11 +31,15 @@ export default function LabelBottomNavigation(props) {
         
       />
       <BottomNavigationAction
-        label={props.campserch}
+        component={Link}
+        to="/CampSerch"
         value="recents"
+        label={props.campserch}
         icon={props.mountain}
       />
       <BottomNavigationAction 
+      component={Link}
+      to="/MyPage"
       label={props.mypage}
       value="recents" 
       icon={props.person} 

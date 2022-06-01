@@ -41,96 +41,134 @@ const images = [
     url:gohan,
     title: 'ご飯もの',
     width: '25%',
+    component:Link,
+    to:'/PostGohan'
   },
   {
     url:menrui,
     title: '麺類',
     width: '25%',
+    component:Link,
+    to:'/PostMen'
   },
   {
     url:panrui,
     title: 'パン類',
     width: '25%',
+    component:Link,
+    to:'/PostPan'
   },
   {
     url:chousyoku,
     title: '朝食',
     width: '25%',
+    component:Link,
+    to:'/PostChousyoku'
   },
   {
     url:niku,
     title: '肉料理',
     width: '25%',
+    component:Link,
+    to:'/PostNiku'
   },
   {
     url:gyokai,
     title: '魚介料理',
     width: '25%',
+    component:Link,
+    to:'/PostGyokai'
   },
   {
     url:yasai,
     title: '野菜料理',
     width: '25%',
+    component:Link,
+    to:'/PostYasai'
   },
   {
     url:salada,
     title: 'サラダ',
     width: '25%',
+    component:Link,
+    to:'/PostSalada'
   },
   {
     url:agemono,
     title: '揚げ物',
     width: '25%',
+    component:Link,
+    to:'/PostAgemono'
   },
   {
     url:nabe,
     title: '鍋もの',
     width: '25%',
+    component:Link,
+    to:'/PostNabemono'
   },
   {
     url:soupe,
     title: '汁物/スープ',
     width: '25%',
+    component:Link,
+    to:'/PostShirumono'
   },
   {
     url:konamono,
     title: '粉物',
     width: '25%',
+    component:Link,
+    to:'/PostKonamono'
   },
   {
     url:egg,
     title: '卵料理',
     width: '25%',
+    component:Link,
+    to:'/PostEgg'
   },
   {
     url:wasyoku,
     title: '和食',
     width: '25%',
+    component:Link,
+    to:'/PostWasyoku'
   },
   {
     url:korean,
     title: '韓国料理',
     width: '25%',
+    component:Link,
+    to:'/PostKankoku'
   },
   {
     url:china,
     title: '中華料理',
     width: '25%',
+    component:Link,
+    to:'/PostChina'
   },
   {
     url:yousyoku,
     title: '洋食',
     width: '25%',
+    component:Link,
+    to:'/PostYousyoku'
   },
   {
     url:italy,
     title: 'イタリア料理',
     width: '25%',
+    component:Link,
+    to:'/PostItaly'
   },
   {
     url:desart,
     title: 'デザート',
     width: '25%',
+    component:Link,
+    to:'/Postdesirt'
   },
 ];
 
@@ -209,6 +247,8 @@ export default function ButtonBases() {
             width: image.width,
           }}
         >
+          <Link to={{pathname:image.to}}
+        key={image.title}>
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
           <Image>
@@ -227,6 +267,7 @@ export default function ButtonBases() {
               <ImageMarked className="MuiImageMarked-root" />
             </Typography>
           </Image>
+          </Link>
         </ImageButton>
       ))}
     </Box>
