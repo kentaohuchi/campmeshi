@@ -6,6 +6,7 @@ import CampSerchMain from './CampSerchMain'
     return (
       <div style={{justifyContent:'center'}}>
         <Camp/>
+        <CampSerchMain/>
       </div>
     );
   }

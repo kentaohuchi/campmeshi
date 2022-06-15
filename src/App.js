@@ -55,7 +55,7 @@ function App() {
                         </nav>
 
                 <Routes>
-                  <Route exect path="/Post/Display" element={<PostDisplay/>}  />
+                  <Route exect path="/PostDisplay" element={<PostDisplay/>}  />
                   <Route exect path="/Post" element={<Post/>}/>
                   <Route exect path="/Home" element={<Home/>}/>
                   <Route exect path="/Home" element={<Home/>}/>

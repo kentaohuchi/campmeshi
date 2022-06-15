@@ -1,4 +1,3 @@
-import * as React from 'react';
   import PostFile from './PostFile'
   import CustomizedMenus from "./CustomizedMenus";
   import TitleLogo from './TitleLogo';
@@ -9,11 +8,35 @@ import * as React from 'react';
   import FoodBankIcon from '@mui/icons-material/FoodBank';
   import ImageSearchIcon from '@mui/icons-material/ImageSearch';
   import PersonIcon from '@mui/icons-material/Person';
+  import { collection, getDocs, getFirestore } from "firebase/firestore";
+  import app from './firebase';
+  import React, { useState, useEffect } from 'react';
+
+
 
   function PostDisplay() {
+    useEffect(() => {
+      getPosts();
+    },[]);
+    const [posts,setPosts] = useState([]);
+    const listItems = posts.map((post) =>
+  <PostFile post={post}/> 
+   );
+    async function getPosts () {
+    const db = getFirestore(app);
+    const querySnapshot = await getDocs(collection(db, "posts"));
+    let date=[]
+    querySnapshot.forEach((doc) => {
+      date.push(doc.data());
+      console.log(doc.id, " => ", doc.data());
+});setPosts([...posts, ...date]);
+console.log(posts);
+    }
+    
     return (
       <div style={{justifyContent:'center' ,alignItems:'center'}}>
         <Header/>
+        {lisutItems.length!==0 ? listItems:''}
         <PostFile/>
         <Footer/>
       </div>

@@ -11,14 +11,12 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MultilineTextFields from './MultilineTextFields';
 import Button from "./Button";
 import SendIcon from '@mui/icons-material/Send';
-import { valueToPercent } from '@mui/base';
 import { doc, setDoc, getFirestore, getDoc } from "firebase/firestore";
 import app from './firebase';
 import Input from '@mui/material/Input';
 import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "firebase/storage";
- 
-
-
+import { getAuth } from "firebase/auth";
+import { v4 as uuidv4 } from "uuid";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -36,14 +34,10 @@ export default function RecipeReviewCard() {
   const [Amount, setAmount] = React.useState({});
   const [Material, setMaterial] = React.useState({});
   const [Make, setMake] = React.useState({});
-
   const db = getFirestore(app);
+  const auth = getAuth(app);
   const creatPost  = async () => {
     console.log('完了');
-    // await setDoc(doc(db, "posts","FoodName"), FoodName);
-    // await setDoc(doc(db, "posts","Amount"), Amount);
-    // await setDoc(doc(db, "posts","Material"), Material);
-    // await setDoc(doc(db, "posts","Make"), Make);
     uploadImage(value);
   }
   
@@ -75,6 +69,8 @@ export default function RecipeReviewCard() {
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             console.log('File available at', downloadURL);
+            const postRef = doc(db, 'posts', uuidv4());
+            setDoc(postRef, {url:downloadURL, Name:FoodName, amount:Amount, material:Material, make:Make, user:auth.currentUser.uid});
         });
     }
 );
